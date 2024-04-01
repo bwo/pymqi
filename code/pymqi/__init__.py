@@ -2636,17 +2636,17 @@ class MessageHandle(object):
             """
             return self.set(name, value)
 
-        def get(self, name, default=None, max_value_length=None,
+        def get(self, name, max_value_length=None,
                 impo_options=CMQC.MQIMPO_INQ_FIRST, pd=CMQC.MQPD_NONE,
                 property_type=CMQC.MQTYPE_AS_SET):
-            """ Returns the value of message property 'name'. 'default' is the
-            value to return if the property is missing. 'max_value_length'
-            is the maximum number of characters the underlying pymqe function
-            is allowed to allocate for fetching the value
-            (defaults to MessageHandle.default_value_length). 'impo_options'
-            and 'pd_options' describe options of MQPD and MQIMPO structures
-            to be used and 'property_type' points to the expected data type
-            of the property.
+            """Returns the value of message property 'name'. 'max_value_length'
+            is the maximum number of characters the underlying pymqe
+            function is allowed to allocate for fetching the value
+            (defaults to MessageHandle.default_value_length).
+            'impo_options' and 'pd_options' describe options of MQPD
+            and MQIMPO structures to be used and 'property_type'
+            points to the expected data type of the property.
+
             """
             if not max_value_length:
                 max_value_length = MessageHandle.default_value_length
